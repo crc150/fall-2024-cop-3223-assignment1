@@ -12,6 +12,7 @@
 
 #include <stdio.h>
  
+// calculates the distance between two points using a^2 + b^2 = c^2,
 double calculateDistance(x1, y1, x2, y2) {
 
     double distance = 0;
@@ -24,6 +25,7 @@ double calculateDistance(x1, y1, x2, y2) {
     return distance;
 }
 
+// calculates the perimeter by multiplying the width plus height by two.
 double calculatePerimeter(x1, y1, x2, y2) {
 
     double perimeter = 0;
@@ -33,13 +35,14 @@ double calculatePerimeter(x1, y1, x2, y2) {
     width = calculateDistance(x1, 0, x2, 0);
     height = calculateDistance(0, y1, 0, y2);
 
-    perimeter = (width * 2) + (height * 2);
+    perimeter = (width + height) * 2;
 
     printf("Point #1 entered: x1 = %lf; y1 = %lf\nPoint #2 entered: x2 = %lf; y2 = %lf\The perimeter of the city encompassed by your request is %.2lf", x1, y1, x2, y2, perimeter);
 
     return 1;
 }
 
+// calculates the area by multiplying the width by the height.
 double calculateArea(x1, y1, x2, y2) {
 
     double area = 0;
@@ -56,21 +59,22 @@ double calculateArea(x1, y1, x2, y2) {
     return 1;
 }
 
+// calculates width by subtracting the first x coordinate from the second and making it positive. 
 double calculateWidth(x1, y1, x2, y2) {
 
     double width = 0;
-    width = x2 - x1;
+    width = abs(x2 - x1);
 
     printf("Point #1 entered: x1 = %lf; y1 = %lf\nPoint #2 entered: x2 = %lf; y2 = %lf\The width of the city encompassed by your request is %.2lf", x1, y1, x2, y2, width);
     
 
     return 1;
 }
-
+// calculates height by subtracting the first x coordinate from the second and making it positive. 
 double calculateHeight(x1, y1, x2, y2) {
 
     double height = 0;
-    height = y2 - y1;
+    height = abs(y2 - y1);
 
     printf("Point #1 entered: x1 = %lf; y1 = %lf\nPoint #2 entered: x2 = %lf; y2 = %lf\The height of the city encompassed by your request is %.2lf", x1, y1, x2, y2, height);
     
@@ -78,6 +82,7 @@ double calculateHeight(x1, y1, x2, y2) {
     return 1;
 }
 
+// returns an inputted number to be put into a variable.
 double askForUserInput() {
 
     double input = 0;
